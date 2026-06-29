@@ -68,7 +68,6 @@ function applyToConfig(config: AdvisorConfig, val: unknown): void {
 	if (typeof obj.model === "string") config.model = obj.model;
 	if (typeof obj.thinkingLevel === "string") config.thinkingLevel = obj.thinkingLevel;
 }
-}
 
 function findProjectPiDir(cwd: string): string | null {
 	const candidate = path.join(cwd, ".pi");
