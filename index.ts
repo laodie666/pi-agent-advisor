@@ -13,7 +13,7 @@ export default function (pi: ExtensionAPI) {
 	const modeIdx = process.argv.indexOf("--mode");
 	const mode = modeIdx >= 0 ? process.argv[modeIdx + 1] : null;
 	if (mode === "json" || mode === "rpc") return;
-	}
+
 
 	let runtime: AdvisorRuntime | null = null;
 	let agentDir = "";
@@ -108,8 +108,6 @@ export default function (pi: ExtensionAPI) {
 				"Enabled: " + runtime.isEnabled,
 				"Model: " + (config.model || "(none)"),
 				"Thinking: " + config.thinkingLevel,
-				"Immune turns: " + config.immuneTurns,
-				"Backlog: " + JSON.stringify(config.syncBacklog),
 			].join("\n");
 			ctx.ui.notify(msg, runtime.isEnabled ? "info" : "warning");
 		},
